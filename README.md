@@ -9,8 +9,6 @@ A real-time multiplayer betting game built with React, TypeScript, and Supabase.
 3. **Cash Out** - Click to cash out before it crashes
 4. **Win or Lose** - Cash out in time = win, crash = lose
 
-Optional: Set **Auto Cash Out** multiplier (min 5.00x) to automatically cash out.
-
 ## 🚀 Quick Start
 
 ### Prerequisites
