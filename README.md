@@ -9,81 +9,84 @@ A real-time multiplayer betting game built with React, TypeScript, and Supabase.
 3. **Cash Out** - Click to cash out before it crashes
 4. **Win or Lose** - Cash out in time = win, crash = lose
 
-## 🚀 Quick Start
+## 🧪 Testing Instructions (For Developers)
 
-### Prerequisites
+### Step 1: Clone the Repository
 
-- Node.js 18+
-- Supabase account ([supabase.com](https://supabase.com))
+```bash
+git clone https://github.com/Yuliia-Maiorova/rocket-betting-game.git
+cd rocket-betting-game
+```
 
-### Setup
+### Step 2: Install Dependencies
 
 ```bash
 npm install
-# Add your Supabase credentials to .env
+```
+
+### Step 3: Set Up Supabase
+
+1. **Create a Supabase Account** (if you don't have one)
+
+   - Go to [supabase.com](https://supabase.com)
+   - Sign up for a free account
+
+2. **Create a New Project**
+
+   - Click "New Project"
+   - Choose a name, database password, and region
+   - Wait for the project to be created (~2 minutes)
+
+3. **Get Your API Credentials**
+
+   - Go to **Settings** → **API**
+   - Copy the **Project URL** (looks like `https://xxxxx.supabase.co`)
+   - Copy the **anon/public** key (long string starting with `eyJ...`)
+
+4. **Create Environment File**
+
+   - Create a file named `.env` in the project root
+   - Add your credentials:
+
+   ```
+   VITE_SUPABASE_URL=https://your-project-id.supabase.co
+   VITE_SUPABASE_ANON_KEY=your-anon-key-here
+   ```
+
+5. **Set Up Database Tables**
+
+   - Go to **SQL Editor** in your Supabase dashboard
+   - Copy the SQL from `database-setup.sql` file in this repo
+   - Paste and click "Run"
+   - This creates the tables, security policies, and triggers
+
+6. **Enable Realtime**
+   - Go to **Database** → **Replication**
+   - Find and enable realtime for these tables:
+     - ✅ `users`
+     - ✅ `bets`
+     - ✅ `game_rounds`
+
+### Step 4: Run the Application
+
+```bash
 npm run dev
 ```
 
-### Database Setup
-
-1. Create a Supabase project
-2. Run the SQL in `fix-game-rounds-rls.sql` in SQL Editor
-3. Enable Realtime for: `users`, `bets`, `game_rounds`
+The app will open at `http://localhost:5173`
 
 ## 🎯 Features
 
 - Real-time multiplayer gameplay
 - Live betting system with auto cash-out
 - User profiles with statistics
-- Leaderboard
+- Leaderboard with top players
 - Responsive design
+- Secure authentication
 
 ## 🛠 Tech Stack
 
-- **Frontend**: React + TypeScript + Vite
+- **Frontend**: React 18 + TypeScript + Vite
 - **Styling**: SCSS
 - **Backend**: Supabase (PostgreSQL + Realtime)
-- **Auth**: Supabase Auth
-
-- Balance management
-
-### Leaderboard ✅
-
-- Top 100 players
-- Real-time updates
-- User ranking
-- Live balance changes
-
-## 🛠️ Tech Stack
-
-### Frontend
-
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **React Router** - Navigation
-- **Vite** - Build tool
-
-## 🎮 How to Play
-
-1. **Sign up** - Get $1000 starting balance
-2. **Place bet_amount** - Before round starts
-3. **Watch multiplier** - Rocket flies, multiplier increases
-4. **Cash out** - Click before crash!
-5. **Claim bonuses** - Every 24 hours
-6. **Climb leaderboard** - Compete with others
-
-## 🚀 Deployment
-
-### Frontend
-
-```bash
-npm run build
-```
-
-### Environment Variables
-
-Set in deployment platform:
-
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
+- **Auth**: Supabase Authentication
