@@ -1,0 +1,131 @@
+@use '../index.scss' as *;
+
+.game-page {
+  min-height: 100vh;
+  background: $dark-bg;
+}
+
+.game-header {
+  background: $dark-card;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.game-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.game-nav {
+  display: flex;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.nav-link {
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &.active {
+    color: #fff;
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.balance-card {
+  background: $dark-hover;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.balance-label {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.balance-amount {
+  color: $success;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $danger;
+  }
+}
+
+.game-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.game-canvas-wrapper {
+  background: $dark-card;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.game-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
